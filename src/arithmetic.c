@@ -37,14 +37,18 @@ int main(void) {
 
     ch = getchar();
 
-    if (ch == '\n' || ch == EOF) {
-        print_arithmetic(a, b);
-        return 0;
+    while (ch == ' ' || ch == '\t')
+        ch = getchar();
+
+
+    if (ch != '\n' && ch != EOF) {
+        printf("n/a");
+        return 1;
     }
 
 
-    printf("n/a");
-    return 1;
+    print_arithmetic(a, b);
+    return 0;
 
 
 }

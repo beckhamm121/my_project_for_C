@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-int main(void) {
+int main(void)
+{
     int x;
     int ch;
 
@@ -9,11 +10,16 @@ int main(void) {
     }
 
     ch = getchar();
+    
 
-    if (ch == '\n' || ch == EOF) {
-        printf("Hello, %d!", x);
-        return 0;
+    while (ch == ' ' || ch == '\t')
+        ch = getchar();
+
+
+    if (ch != '\n' && ch != EOF) {
+        return 1;
     }
 
-    return 1;
+    printf("Hello, %d!", x);
+    return 0;
 }
